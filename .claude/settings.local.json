@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(agent-browser)",
+      "Bash(netstat -ano)",
+      "Bash(findstr \"3000\\\\|5173\\\\|8000\")",
+      "PowerShell(Get-Content \"C:\\\\Users\\\\a2021\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-a2021-OneDrive-Escritorio-Vibe-projects-workspace-PROYECTOS-ScoutLane\\\\89ec56af-2941-4e4c-aa79-91613380fde5\\\\tasks\\\\bb832aiik.output\" -Raw; \"---END---\"; Get-Item \"C:\\\\Users\\\\a2021\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-a2021-OneDrive-Escritorio-Vibe-projects-workspace-PROYECTOS-ScoutLane\\\\89ec56af-2941-4e4c-aa79-91613380fde5\\\\tasks\\\\bb832aiik.output\" | Select-Object Length, LastWriteTime)",
+      "PowerShell(Get-Process *)",
+      "Bash(npm run *)",
+      "Bash(echo \"Started PID: $!\")",
+      "Bash(powershell -Command \"Get-Content 'C:\\\\Users\\\\a2021\\\\AppData\\\\Local\\\\Temp\\\\scoutlane-dev.log' -Raw\")",
+      "Bash(agent-browser open *)",
+      "Bash(agent-browser wait *)",
+      "Bash(agent-browser screenshot *)",
+      "Bash(agent-browser get *)",
+      "Bash(agent-browser snapshot *)",
+      "Read(//c/Users/a2021/.claude/commands/**)",
+      "Read(//c/Users/a2021/.claude/plugins/cache/**)",
+      "Bash(rm .claude/agents/chief-of-staff.md .claude/agents/data-analyst.md)",
+      "Bash(rm -rf ~/.claude/skills/trx)",
+      "Bash(claude mcp *)",
+      "Bash(awk '{print $2}')",
+      "Read(//tmp/**)",
+      "Bash(node -e ' *)",
+      "Bash(node *)",
+      "Skill(gsd:map-codebase)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(pnpm test *)",
+      "Bash(pnpm install *)",
+      "Bash(git reset *)",
+      "Bash(git checkout *)",
+      "Bash(pnpm typecheck *)",
+      "Bash(pnpm lint *)",
+      "Bash(git ls-tree *)",
+      "Bash(git fetch *)",
+      "Bash(git worktree *)",
+      "Bash(xargs grep -l \"getRequiredEnv\\\\|process.env\\\\|env validation\")",
+      "Bash(send)",
+      "Bash(notify\" | head -15)"
+    ]
+  }
+}
