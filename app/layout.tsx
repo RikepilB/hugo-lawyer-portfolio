@@ -30,6 +30,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${lora.variable} ${merriweather.variable}`}>
       <body className="flex min-h-screen flex-col">
+        <a
+          href="#contenido"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-[var(--color-navy-900)] focus:px-4 focus:py-2 focus:text-[var(--color-ivory)]"
+        >
+          Saltar al contenido principal
+        </a>
         <Header />
         <main id="contenido" className="flex-1">{children}</main>
         <Footer />
