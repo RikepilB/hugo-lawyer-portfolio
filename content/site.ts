@@ -44,7 +44,7 @@ export const site = {
         "Reuniones de orientación legal para evaluar su situación, identificar " +
         "riesgos y definir un plan de acción. Diagnóstico claro y recomendaciones " +
         "prácticas sin compromiso de continuidad.",
-      fee: "Desde USD 60 / consulta",
+      fee: "Consultar honorarios",
     },
     {
       slug: "demandas",
@@ -71,7 +71,7 @@ export const site = {
         "Asesoramiento permanente para personas y pequeñas empresas. Revisión de " +
         "contratos, prevención de litigios y respuesta rápida ante requerimientos " +
         "legales del día a día.",
-      fee: "Plan mensual desde USD 150",
+      fee: "Consultar honorarios",
     },
   ] satisfies Service[],
   contact: {
