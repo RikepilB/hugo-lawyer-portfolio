@@ -1,8 +1,15 @@
 import Link from "next/link";
 import { site } from "@/content/site";
+import { buildMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { HeroSection } from "@/components/HeroSection";
 import { SectionHeading } from "@/components/SectionHeading";
+
+export const metadata = buildMetadata({
+  title: "Inicio",
+  description: site.lawyer.intro,
+  path: "/",
+});
 
 export default function HomePage() {
   return (

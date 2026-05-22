@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import { site } from "@/content/site";
+import { buildMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CalendarEmbed } from "@/components/CalendarEmbed";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Contacto y Reserva",
   description: "Reserve una consulta legal en línea o presencial.",
-};
+  path: "/contacto",
+});
 
 export default function ContactoPage() {
   return (

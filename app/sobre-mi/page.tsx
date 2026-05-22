@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { site } from "@/content/site";
+import { buildMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Sobre Mí",
   description: "Biografía profesional, formación y credenciales.",
-};
+  path: "/sobre-mi",
+});
 
 export default function SobreMiPage() {
   return (

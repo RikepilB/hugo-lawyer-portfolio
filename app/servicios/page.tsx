@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/content/site";
+import { buildMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceCard } from "@/components/ServiceCard";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Servicios",
   description: "Consultas, demandas, procesos y asesorías legales.",
-};
+  path: "/servicios",
+});
 
 export default function ServiciosPage() {
   return (
