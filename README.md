@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bufete Juridico -- Portfolio Site
 
-## Getting Started
+Sitio web profesional para abogado en practica privada. Construido con Next.js 16, Tailwind CSS v4 y Cal.com para reservas de consulta.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router, TypeScript)
+- Tailwind CSS v4
+- Cal.com inline embed (`@calcom/embed-react`)
+- Tests: Vitest + Playwright
+- Deploy: Vercel / Netlify
+
+## Desarrollo local
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+cp .env.example .env.local   # editar valores
+pnpm dev                     # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Variables de entorno
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Variable | Descripcion |
+|---|---|
+| `NEXT_PUBLIC_CAL_USERNAME` | Usuario de Cal.com (sin `cal.com/`) |
+| `NEXT_PUBLIC_CAL_EVENT_SLUG` | Slug del tipo de evento (p. ej. `30min`) |
+| `NEXT_PUBLIC_SITE_URL` | URL publica del sitio (sin `/` final) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Edicion de contenido
 
-## Learn More
+Todo el copy editable vive en `content/site.ts`:
 
-To learn more about Next.js, take a look at the following resources:
+- Nombre, titulo y tagline del abogado
+- Biografia y credenciales
+- Lista de servicios (titulo, descripcion, tarifa)
+- Informacion de contacto (correo, telefono, direccion)
+- Enlaces de navegacion
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Para cambiar texto, edite `content/site.ts` y haga commit. No es necesario tocar otros archivos.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts
 
-## Deploy on Vercel
+```bash
+pnpm dev          # Servidor de desarrollo
+pnpm build        # Build de produccion
+pnpm start        # Servir build de produccion
+pnpm test         # Tests unitarios (Vitest)
+pnpm test:e2e     # Tests end-to-end (Playwright)
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Despliegue
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Vercel
+
+1. Suba el repositorio a GitHub.
+2. En [vercel.com/new](https://vercel.com/new) importe el repo.
+3. Configure las variables de entorno (`NEXT_PUBLIC_CAL_USERNAME`, `NEXT_PUBLIC_CAL_EVENT_SLUG`, `NEXT_PUBLIC_SITE_URL`).
+4. Pulse **Deploy**. Cada push a `main` despliega automaticamente.
+
+### Netlify
+
+1. Suba el repositorio a GitHub.
+2. En [netlify.com](https://netlify.com) importe el repo.
+3. Configure `Build command`: `pnpm build` y `Publish directory`: `.next`.
+4. Agregue las variables de entorno en Site settings > Environment variables.
+5. Cada push a `main` despliega automaticamente.
+
+## Cal.com setup
+
+1. Cree una cuenta en [cal.com](https://cal.com).
+2. Cree un tipo de evento (p. ej. "Consulta inicial -- 30 min").
+3. Anote el username y el event slug (visible en la URL `cal.com/<username>/<event-slug>`).
+4. Configure estos valores en `.env.local` (desarrollo) y en Vercel/Netlify (produccion).
