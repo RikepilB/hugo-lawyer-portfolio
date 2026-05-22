@@ -1,0 +1,8 @@
+[build]
+  command = "pnpm build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_PUBLIC_CAL_USERNAME = "richard-pillaca-mqty24"
+  NEXT_PUBLIC_CAL_EVENT_SLUG = "30min"
+  NEXT_PUBLIC_SITE_URL = ""
