@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Lora, Merriweather } from "next/font/google";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 const lora = Lora({
@@ -27,7 +29,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${lora.variable} ${merriweather.variable}`}>
-      <body>{children}</body>
+      <body className="flex min-h-screen flex-col">
+        <Header />
+        <main id="contenido" className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
