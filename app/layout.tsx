@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lora, Merriweather } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { site } from "@/content/site";
 import "./globals.css";
 
 const lora = Lora({
@@ -20,10 +21,12 @@ const merriweather = Merriweather({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
-    default: "Bufete Jurídico — Asesoría Legal Profesional",
+    default: `Dr. Wilfredo Hugo Sánchez — ${site.lawyer.title}`,
     template: "%s · Bufete Jurídico",
   },
-  description: "Asesoría legal profesional. Consultas, demandas, procesos y asesorías.",
+  description:
+    "Dr. Wilfredo Hugo Sánchez. Abogado especialista en litigios civiles, derecho inmobiliario " +
+    "y defensa constitucional. Más de 20 años de experiencia. Estudio en San Isidro, Lima.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

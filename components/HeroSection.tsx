@@ -6,14 +6,14 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-[var(--color-navy-900)] text-[var(--color-ivory)]">
       <Container className="relative py-24 sm:py-32">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-gold-500)]">
-          {site.lawyer.title}
+        <p className="mb-4 font-semibold tracking-[0.10em] text-[var(--color-gold-500)] text-sm">
+          {site.lawyer.calRegistration}
         </p>
         <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
           {site.lawyer.name}
         </h1>
         <p className="mt-4 font-[family-name:var(--font-merriweather)] text-xl text-[var(--color-gold-300)] sm:text-2xl">
-          {site.lawyer.tagline}
+          {site.lawyer.title}
         </p>
         <p className="mt-8 max-w-2xl text-base leading-relaxed text-[var(--color-navy-50)] sm:text-lg">
           {site.lawyer.intro}

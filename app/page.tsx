@@ -20,18 +20,21 @@ export default function HomePage() {
           <SectionHeading eyebrow="Áreas de práctica">
             Una práctica enfocada en lo que más importa
           </SectionHeading>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {site.services.map((service) => (
+          <div className="grid gap-8 sm:grid-cols-3">
+            {site.specializations.map((spec) => (
               <Link
-                key={service.slug}
-                href={`/servicios#${service.slug}`}
+                key={spec.slug}
+                href={`/servicios#${spec.slug}`}
                 className="group rounded-[var(--radius-card)] border border-[var(--color-navy-100)] bg-white p-6 transition-shadow hover:shadow-[var(--shadow-card)]"
               >
                 <h3 className="text-lg font-bold text-[var(--color-navy-900)] group-hover:text-[var(--color-gold-700)]">
-                  {service.title}
+                  {spec.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-navy-500)]">
-                  {service.description.split(".")[0]}.
+                  {spec.description}
+                </p>
+                <p className="mt-3 text-xs font-medium text-[var(--color-navy-400)]">
+                  {spec.items.length} {spec.items.length === 1 ? "servicio" : "servicios"}
                 </p>
               </Link>
             ))}

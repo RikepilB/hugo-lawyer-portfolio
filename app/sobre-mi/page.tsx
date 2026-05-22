@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata = buildMetadata({
   title: "Sobre Mí",
-  description: "Biografía profesional, formación y credenciales.",
+  description: "Dr. Wilfredo Hugo Sánchez. Más de 20 años de trayectoria en litigios civiles, derecho inmobiliario y defensa constitucional. Registro CAL N.° 31027.",
   path: "/sobre-mi",
 });
 

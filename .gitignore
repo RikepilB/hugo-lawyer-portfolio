@@ -52,3 +52,6 @@ next-env.d.ts
 .vscode
 
 .vercel
+
+# Local Netlify folder
+.netlify

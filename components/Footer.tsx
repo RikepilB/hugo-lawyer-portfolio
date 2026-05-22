@@ -12,7 +12,12 @@ export function Footer() {
             <p className="font-[family-name:var(--font-merriweather)] text-base font-bold text-[var(--color-navy-900)]">
               {site.lawyer.name}
             </p>
-            <p className="mt-1 text-sm text-[var(--color-navy-500)]">{site.lawyer.title}</p>
+            <p className="mt-1 text-sm text-[var(--color-navy-500)]">
+              {site.lawyer.title}
+            </p>
+            <p className="mt-2 text-sm font-medium text-[var(--color-gold-700)]">
+              {site.lawyer.calRegistration}
+            </p>
           </div>
           <div>
             <p className="text-sm font-semibold text-[var(--color-navy-900)]">Contacto</p>

@@ -3,11 +3,11 @@ import { site } from "@/content/site";
 import { buildMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
-import { ServiceCard } from "@/components/ServiceCard";
+import { SpecializationSection } from "@/components/ServiceCard";
 
 export const metadata = buildMetadata({
   title: "Servicios",
-  description: "Consultas, demandas, procesos y asesorías legales.",
+  description: "Litigios civiles e inmobiliarios, subastas y remates judiciales, defensa constitucional.",
   path: "/servicios",
 });
 
@@ -16,16 +16,16 @@ export default function ServiciosPage() {
     <section className="py-20 sm:py-24">
       <Container>
         <SectionHeading eyebrow="Servicios">
-          Cuatro áreas de práctica con atención personalizada
+          Tres áreas de especialización con atención personalizada
         </SectionHeading>
-        <div className="grid gap-8 sm:grid-cols-2">
-          {site.services.map((service) => (
-            <ServiceCard key={service.slug} service={service} />
+        <div className="space-y-16">
+          {site.specializations.map((spec) => (
+            <SpecializationSection key={spec.slug} specialization={spec} />
           ))}
         </div>
-        <div className="mt-16 rounded-[var(--radius-card)] bg-[var(--color-navy-900)] p-10 text-center text-[var(--color-ivory)]">
+        <div className="mt-20 rounded-[var(--radius-card)] bg-[var(--color-navy-900)] p-10 text-center text-[var(--color-ivory)]">
           <h3 className="font-[family-name:var(--font-merriweather)] text-2xl font-bold">
-            ¿Su caso no encaja en una categoría?
+            ¿Su caso no encaja en estas categorías?
           </h3>
           <p className="mt-3 text-base text-[var(--color-navy-50)]">
             Reserve una consulta inicial y evaluamos juntos el mejor camino.
