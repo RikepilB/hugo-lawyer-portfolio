@@ -19,7 +19,7 @@ export default function SobreMiPage() {
           <div>
             <div className="overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-navy-100)] bg-white">
               <Image
-                src="/headshot-placeholder.jpg"
+                src="/photos/about-portrait.jpeg"
                 alt={`Retrato profesional de ${site.lawyer.name}`}
                 width={480}
                 height={600}
